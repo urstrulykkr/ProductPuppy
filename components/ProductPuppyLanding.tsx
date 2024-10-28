@@ -8,6 +8,11 @@ import { Search, Dog, Moon, Sun, Globe, MessageSquare, Target, Heart, Brain, Fil
 import { Toggle } from "@/components/ui/toggle"
 import { motion, AnimatePresence } from 'framer-motion'
 
+interface FeatureCardProps {
+    icon: JSX.Element; // or another type depending on what `icon` represents
+    title: string;
+    description: string;
+  }
 // Sample product data
 const products = [
   { id: 1, name: "Laptop", category: "Electronics", description: "High-performance laptop for work and gaming" },
@@ -259,7 +264,7 @@ export default function ProductPuppyLanding() {
   )
 }
 
-function FeatureCard({ icon, title, description }) {
+function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
